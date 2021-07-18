@@ -10,7 +10,7 @@ public class NameTest {
     void createNameWithoutError() throws InvalidArgumentException {
         String stringName = "Blue shirt";
         Name name = new Name(stringName);
-        assertEquals(name.getName(), stringName);
+        assertEquals(name.getValue(), stringName);
     }
 
     @Test

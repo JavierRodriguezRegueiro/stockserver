@@ -22,6 +22,6 @@ public class ProductFinder {
     @GetMapping(path = "/find")
     public ProductDTO findProduct(@RequestParam("id") String id) {
         Product product = this.productRepository.find(Id.generateIdFromString(id));
-        return new ProductDTO(product.getId().getId(), product.getName().getName(), product.getStock().getStock());
+        return new ProductDTO(product.getId().getValue(), product.getName().getValue(), product.getStock().getValue());
     }
 }

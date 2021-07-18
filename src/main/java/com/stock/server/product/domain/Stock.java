@@ -19,7 +19,7 @@ public class Stock {
         return stock >= 0;
     }
 
-    public int getStock() {
+    public int getValue() {
         return this.stock;
     }
 }

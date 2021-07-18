@@ -16,7 +16,7 @@ public class Id {
         return new Id(UUID.randomUUID());
     }
 
-    public UUID getId() {
+    public UUID getValue() {
         return this.id;
     }
 }

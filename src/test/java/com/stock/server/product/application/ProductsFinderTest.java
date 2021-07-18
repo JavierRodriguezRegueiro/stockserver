@@ -20,7 +20,7 @@ public class ProductsFinderTest {
         ProductsFinder productsFinder = new ProductsFinder(repository);
         ArrayList<ProductDTO> products = productsFinder.findProducts();
         assertEquals(products.size(), 2);
-        assertEquals(products.get(0).getId(), product1.getId().getId());
-        assertEquals(products.get(1).getId(), product2.getId().getId());
+        assertEquals(products.get(0).getId(), product1.getId().getValue());
+        assertEquals(products.get(1).getId(), product2.getId().getValue());
     }
 }

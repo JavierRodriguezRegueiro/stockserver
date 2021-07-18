@@ -20,8 +20,8 @@ public class ProductFinderTest {
         Product product = new Product(productId, new Name("shirt"), new Stock(8));
         repository.save(product);
         ProductFinder productFinder =  new ProductFinder(repository);
-        assertEquals(productFinder.findProduct(idString).getId(),product.getId().getId());
-        assertEquals(productFinder.findProduct(idString).getName(),product.getName().getName());
-        assertEquals(productFinder.findProduct(idString).getStock(),product.getStock().getStock());
+        assertEquals(productFinder.findProduct(idString).getId(),product.getId().getValue());
+        assertEquals(productFinder.findProduct(idString).getName(),product.getName().getValue());
+        assertEquals(productFinder.findProduct(idString).getStock(),product.getStock().getValue());
     }
 }

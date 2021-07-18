@@ -20,7 +20,7 @@ public class Name {
         return characters.matches("^[\\p{L} .'-]+$");
     }
 
-    public String getName() {
+    public String getValue() {
         return this.name;
     }
 }
