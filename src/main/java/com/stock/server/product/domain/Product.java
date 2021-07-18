@@ -27,6 +27,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product " + this.name.getName() + " was created";
+        return "id: " + this.id.getId() + " name: " + this.name.getName() + " stock: " + this.stock.getStock();
     }
 }

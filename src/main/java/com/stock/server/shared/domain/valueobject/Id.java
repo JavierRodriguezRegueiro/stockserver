@@ -8,6 +8,10 @@ public class Id {
         this.id = id;
     }
 
+    public static Id generateIdFromString(String idString) {
+        return new Id(UUID.fromString(idString));
+    }
+
     public static Id generateRandomId() {
         return new Id(UUID.randomUUID());
     }
