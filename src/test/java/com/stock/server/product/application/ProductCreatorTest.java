@@ -1,7 +1,7 @@
 package com.stock.server.product.application;
 
 import com.stock.server.product.domain.ProductRepository;
-import com.stock.server.product.infrastructure.InMemoryProductRepository;
+import com.stock.server.product.mock.InMemoryProductRepository;
 import com.stock.server.shared.domain.valueobject.InvalidArgumentException;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

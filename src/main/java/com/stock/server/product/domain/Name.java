@@ -20,6 +20,10 @@ public class Name {
         return characters.matches("^[\\p{L} .'-]+$");
     }
 
+    public static Name generateEmptyName() throws InvalidArgumentException {
+        return new Name("Empty product");
+    }
+
     public String getValue() {
         return this.name;
     }

@@ -19,6 +19,10 @@ public class Stock {
         return stock >= 0;
     }
 
+    public static Stock generateEmptyStock() throws InvalidArgumentException {
+        return new Stock(0);
+    }
+
     public int getValue() {
         return this.stock;
     }

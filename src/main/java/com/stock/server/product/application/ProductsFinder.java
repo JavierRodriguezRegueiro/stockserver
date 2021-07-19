@@ -22,7 +22,7 @@ public class ProductsFinder {
     public ArrayList<ProductDTO> findProducts() {
         ArrayList<ProductDTO> productsToReturn = new ArrayList<ProductDTO>();
         for (Product product : this.productRepository.findAll()) {
-            productsToReturn.add(new ProductDTO(product.getId().getValue(), product.getName().getValue(), product.getStock().getValue()));
+            productsToReturn.add(new ProductDTO(product.getProductId().getValue(), product.getName().getValue(), product.getStock().getValue()));
         }
         return productsToReturn;
     }

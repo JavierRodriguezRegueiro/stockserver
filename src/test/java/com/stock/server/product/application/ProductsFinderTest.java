@@ -1,7 +1,7 @@
 package com.stock.server.product.application;
 
 import com.stock.server.product.domain.*;
-import com.stock.server.product.infrastructure.InMemoryProductRepository;
+import com.stock.server.product.mock.InMemoryProductRepository;
 import com.stock.server.shared.domain.valueobject.Id;
 import com.stock.server.shared.domain.valueobject.InvalidArgumentException;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ public class ProductsFinderTest {
         ProductsFinder productsFinder = new ProductsFinder(repository);
         ArrayList<ProductDTO> products = productsFinder.findProducts();
         assertEquals(products.size(), 2);
-        assertEquals(products.get(0).getId(), product1.getId().getValue());
-        assertEquals(products.get(1).getId(), product2.getId().getValue());
+        assertEquals(products.get(0).getId(), product1.getProductId().getValue());
+        assertEquals(products.get(1).getId(), product2.getProductId().getValue());
     }
 }

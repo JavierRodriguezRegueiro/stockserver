@@ -1,4 +1,4 @@
-package com.stock.server.product.infrastructure;
+package com.stock.server.product.mock;
 
 import com.stock.server.product.domain.Product;
 import com.stock.server.product.domain.ProductRepository;
@@ -25,7 +25,7 @@ public class InMemoryProductRepository implements ProductRepository{
     public Product find(Id id) {
         Product productToReturn = null;
         for (Product product : this.products) {
-            if(product.getId().getValue().compareTo(id.getValue()) == 0) {
+            if(product.getProductId().getValue().compareTo(id.getValue()) == 0) {
                 productToReturn = product;
             }
         }
