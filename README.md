@@ -1,0 +1,2 @@
+# stockserver
+Product stock server
