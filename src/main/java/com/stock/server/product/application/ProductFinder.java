@@ -6,12 +6,10 @@ import com.stock.server.product.domain.ProductRepository;
 import com.stock.server.shared.domain.valueobject.Id;
 import com.stock.server.shared.domain.valueobject.InvalidArgumentException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
 
-@RestController
+@Component
 public class ProductFinder {
     private final ProductRepository productRepository;
 
@@ -20,8 +18,7 @@ public class ProductFinder {
         this.productRepository = productRepository;
     }
 
-    @GetMapping(path = "/find")
-    public ProductDTO findProduct(@RequestParam("id") String id) throws InvalidArgumentException {
+    public ProductDTO findProduct(String id) throws InvalidArgumentException {
         Product product = this.productRepository.find(Id.generateIdFromString(id));
         return new ProductDTO(product.getProductId().getValue(), product.getName().getValue(), product.getStock().getValue());
     }

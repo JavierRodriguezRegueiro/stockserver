@@ -7,11 +7,9 @@ import com.stock.server.product.domain.ProductRepository;
 import com.stock.server.shared.domain.valueobject.Id;
 import com.stock.server.shared.domain.valueobject.InvalidArgumentException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 
-@RestController
+@Component
 public class ProductCreator {
     private final ProductRepository productRepository;
 
@@ -20,9 +18,12 @@ public class ProductCreator {
         this.productRepository = productRepository;
     }
 
-    @PostMapping(path = "/create")
-    public String createProduct(@RequestParam("name") String name, @RequestParam("stock") int stock) throws InvalidArgumentException {
-        this.productRepository.save(new Product(Id.generateRandomId(), new Name(name), new Stock(stock)));
-        return "OK";
+    public String createProduct(String name, int stock) throws InvalidArgumentException {
+        return saveProductIntoRepository(new Product(Id.generateRandomId(), new Name(name), new Stock(stock)));
+    }
+
+    private String saveProductIntoRepository(Product product) {
+        this.productRepository.save(product);
+        return "Created";
     }
 }

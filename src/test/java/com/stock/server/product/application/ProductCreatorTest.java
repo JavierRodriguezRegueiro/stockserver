@@ -11,6 +11,6 @@ public class ProductCreatorTest {
     void shouldCreateProductWithoutError() throws InvalidArgumentException {
         ProductRepository repository = new InMemoryProductRepository();
         ProductCreator productCreator =  new ProductCreator(repository);
-        assertEquals(productCreator.createProduct("shirt", 5), "OK");
+        assertEquals(productCreator.createProduct("shirt", 5), "Created");
     }
 }
