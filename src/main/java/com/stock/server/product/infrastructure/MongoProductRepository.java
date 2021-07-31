@@ -38,12 +38,8 @@ public class MongoProductRepository implements ProductRepository {
     public Product find(Id id) throws InvalidArgumentException {
         Query query = new Query();
         query.addCriteria(Criteria.where("productId").is(id));
-        List<Product> product = this.mongoTemplate.find(query, Product.class);
-        if(product.size() == 1) {
-            return product.get(0);
-        } else {
-            return Product.generateEmptyProduct();
-        }
+        Product product =  this.mongoTemplate.findOne(query, Product.class);
+        return product != null ? product : Product.generateEmptyProduct();
     }
 
     @Override
