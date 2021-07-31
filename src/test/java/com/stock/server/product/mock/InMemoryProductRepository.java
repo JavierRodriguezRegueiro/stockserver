@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
-@Component
 public class InMemoryProductRepository implements ProductRepository{
     private ArrayList<Product> products = new ArrayList<Product>();;
 
