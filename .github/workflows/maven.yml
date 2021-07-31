@@ -21,5 +21,10 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
+    - name: Start containers
+      run: docker-compose -f "docker-compose.yml" up -d --build
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Stop containers
+      if: always()
+      run: docker-compose -f "docker-compose.yml" down
