@@ -31,4 +31,10 @@ public class InMemoryProductRepository implements ProductRepository{
         return productToReturn;
     }
 
+    @Override
+    public void remove(Id id) {
+        Product product = this.find(id);
+        this.products.remove(product);
+    }
+
 }

@@ -10,4 +10,5 @@ public interface ProductRepository {
     void save(Product product);
     ArrayList<Product> findAll();
     Product find(Id id) throws InvalidArgumentException;
+    void remove(Id id);
 }

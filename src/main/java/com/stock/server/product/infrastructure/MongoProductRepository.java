@@ -1,9 +1,7 @@
 package com.stock.server.product.infrastructure;
 
-import com.stock.server.product.domain.Name;
 import com.stock.server.product.domain.Product;
 import com.stock.server.product.domain.ProductRepository;
-import com.stock.server.product.domain.Stock;
 import com.stock.server.shared.domain.valueobject.Id;
 import com.stock.server.shared.domain.valueobject.InvalidArgumentException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +44,12 @@ public class MongoProductRepository implements ProductRepository {
         } else {
             return Product.generateEmptyProduct();
         }
+    }
+
+    @Override
+    public void remove(Id id) {
+        Query query = new Query();
+        query.addCriteria(Criteria.where("productId").is(id));
+        this.mongoTemplate.findAndRemove(query, Product.class);
     }
 }
