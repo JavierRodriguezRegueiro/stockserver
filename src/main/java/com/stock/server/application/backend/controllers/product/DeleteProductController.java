@@ -1,4 +1,4 @@
-package com.stock.server.application.backend.controllers;
+package com.stock.server.application.backend.controllers.product;
 
 import com.stock.server.product.application.ProductRemover;
 import com.stock.server.shared.domain.valueobject.Id;
@@ -19,7 +19,7 @@ public class DeleteProductController {
         this.productRemover = productRemover;
     }
 
-    @DeleteMapping(path = "/removeProduct")
+    @DeleteMapping(path = "/product/remove")
     public ResponseEntity<String> removeProduct(@RequestParam("id") String id) {
         try {
             return new ResponseEntity<>(this.productRemover.removeProduct(Id.generateIdFromString(id)), HttpStatus.OK);

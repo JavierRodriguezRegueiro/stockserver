@@ -1,4 +1,4 @@
-package com.stock.server.application.backend.controllers;
+package com.stock.server.application.backend.controllers.product;
 import com.stock.server.product.application.ProductsFinder;
 import com.stock.server.product.domain.ProductDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class GetProductsController {
         this.productsFinder = productsFinder;
     }
 
-    @GetMapping(path = "/findAll")
+    @GetMapping(path = "/product/findAll")
     public ResponseEntity<ArrayList<ProductDTO>> getProducts() {
         try {
             return new ResponseEntity<>(this.productsFinder.findProducts(), HttpStatus.OK);

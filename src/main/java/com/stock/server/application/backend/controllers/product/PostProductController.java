@@ -1,4 +1,4 @@
-package com.stock.server.application.backend.controllers;
+package com.stock.server.application.backend.controllers.product;
 
 import com.stock.server.product.application.ProductCreator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ public class PostProductController {
         this.productCreator = productCreator;
     }
 
-    @PostMapping(path = "/create")
+    @PostMapping(path = "/product/create")
     public ResponseEntity<String> postProduct(@RequestParam("name") String name, @RequestParam("stock") int stock) {
         try {
             return new ResponseEntity<>(this.productCreator.createProduct(name, stock), HttpStatus.CREATED);

@@ -10,7 +10,7 @@ Product stock server using DDD architecture with springboot and mongoDB
 
 | Request | Type | Parameters |
 | ------------- | ------------- | ------------- |
-| / find  | GET  | <ul><li>id (String): product id to find</li></ul> |
-| / findAll  | GET  | no parameters requires |
-| / create  | POST  | <ul><li>name (String): product name</li><li>stock (Number): product initial stock</li></ul> |
-| / removeProduct  | DELETE  | <ul><li>id (String): product id to remove</li></ul> |
+| /api/product/find  | GET  | <ul><li>id (String): product id to find</li></ul> |
+| /api/product/findAll  | GET  | no parameters requires |
+| /api/product/create  | POST  | <ul><li>name (String): product name</li><li>stock (Number): product initial stock</li></ul> |
+| /api/product/remove  | DELETE  | <ul><li>id (String): product id to remove</li></ul> |
