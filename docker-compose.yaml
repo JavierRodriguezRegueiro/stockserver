@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  mongodb:
+  mongo-database:
     image: mongo
     container_name: mongodb
     ports:
@@ -20,6 +20,15 @@ services:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=rootuser
       - ME_CONFIG_MONGODB_ADMINPASSWORD=rootpass
       - ME_CONFIG_MONGODB_SERVER=mongodb
+  stock-server-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: stock-server
+    ports:
+      - 8080:8080
+    links:
+      - mongo-database
 volumes:
   data: {}
 
